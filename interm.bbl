@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{chow2022predicting}
+Yuen~Ler Chow, Shantanu Singh, Anne~E Carpenter, and Gregory~P Way.
+\newblock Predicting drug polypharmacology from cell morphology readouts using variational autoencoder latent space arithmetic.
+\newblock {\em PLoS computational biology}, 18(2):e1009888, 2022.
+
+\bibitem{duan2016l1000cds2}
+Qiaonan Duan, St~Patrick Reid, Neil~R Clark, Zichen Wang, Nicolas~F Fernandez, Andrew~D Rouillard, Ben Readhead, Sarah~R Tritsch, Rachel Hodos, Marc Hafner, et~al.
+\newblock L1000cds2: Lincs l1000 characteristic direction signatures search engine.
+\newblock {\em NPJ systems biology and applications}, 2(1):1--12, 2016.
+
+\bibitem{elabd2024simple}
+Mazen Elabd and Sardar Jaf.
+\newblock A simple attention-based mechanism for bimodal emotion classification.
+\newblock {\em arXiv preprint arXiv:2407.00134}, 2024.
+
+\bibitem{liu2015compound}
+Chenglin Liu, Jing Su, Fei Yang, Kun Wei, Jinwen Ma, and Xiaobo Zhou.
+\newblock Compound signature detection on lincs l1000 big data.
+\newblock {\em Molecular BioSystems}, 11(3):714--722, 2015.
+
+\bibitem{lu2021drug}
+Jiaxing Lu, Ming Chen, and Yufang Qin.
+\newblock Drug-induced cell viability prediction from lincs-l1000 through wrfen-xgboost algorithm.
+\newblock {\em BMC bioinformatics}, 22(1):13, 2021.
+
+\bibitem{mcdermott2019deep}
+Matthew~BA McDermott, Jennifer Wang, Wen-Ning Zhao, Steven~D Sheridan, Peter Szolovits, Isaac Kohane, Stephen~J Haggarty, and Roy~H Perlis.
+\newblock Deep learning benchmarks on l1000 gene expression data.
+\newblock {\em IEEE/ACM transactions on computational biology and bioinformatics}, 17(6):1846--1857, 2019.
+
+\bibitem{pham2021deep}
+Thai-Hoang Pham, Yue Qiu, Jucheng Zeng, Lei Xie, and Ping Zhang.
+\newblock A deep learning framework for high-throughput mechanism-driven phenotype compound screening and its application to covid-19 drug repurposing.
+\newblock {\em Nature machine intelligence}, 3(3):247--257, 2021.
+
+\bibitem{qiu2020bayesian}
+Yue Qiu, Tianhuan Lu, Hansaim Lim, and Lei Xie.
+\newblock A bayesian approach to accurate and robust signature detection on lincs l1000 data.
+\newblock {\em Bioinformatics}, 36(9):2787--2795, 2020.
+
+\bibitem{samal2022opportunities}
+Bikash~Ranjan Samal, Jens~Uwe Loers, Vanessa Vermeirssen, and Katleen De~Preter.
+\newblock Opportunities and challenges in interpretable deep learning for drug sensitivity prediction of cancer cells.
+\newblock {\em Frontiers in Bioinformatics}, 2:1036963, 2022.
+
+\bibitem{stahlschmidt2022multimodal}
+S{\"o}ren~Richard Stahlschmidt, Benjamin Ulfenborg, and Jane Synnergren.
+\newblock Multimodal deep learning for biomedical data fusion: a review.
+\newblock {\em Briefings in bioinformatics}, 23(2):bbab569, 2022.
+
+\bibitem{stathias2018sustainable}
+Vasileios Stathias, Amar Koleti, Du{\v{s}}ica Vidovi{\'c}, Daniel~J Cooper, Kathleen~M Jagodnik, Raymond Terryn, Michele Forlin, Caty Chung, Denis Torre, Nagi Ayad, et~al.
+\newblock Sustainable data and metadata management at the bd2k-lincs data coordination and integration center.
+\newblock {\em Scientific data}, 5(1):1--14, 2018.
+
+\bibitem{subramanian2017next}
+Aravind Subramanian, Rajiv Narayan, Steven~M Corsello, David~D Peck, Ted~E Natoli, Xiaodong Lu, Joshua Gould, John~F Davis, Andrew~A Tubelli, Jacob~K Asiedu, et~al.
+\newblock A next generation connectivity map: L1000 platform and the first 1,000,000 profiles.
+\newblock {\em Cell}, 171(6):1437--1452, 2017.
+
+\bibitem{szalai2019signatures}
+Bence Szalai, Vigneshwari Subramanian, Christian~H Holland, R{\'o}bert Alf{\"o}ldi, L{\'a}szl{\'o}~G Pusk{\'a}s, and Julio Saez-Rodriguez.
+\newblock Signatures of cell death and proliferation in perturbation transcriptomics data—from confounding factor to effective prediction.
+\newblock {\em Nucleic Acids Research}, 47(19):10010--10026, 2019.
+
+\bibitem{wu2022deep}
+You Wu, Qiao Liu, Yue Qiu, and Lei Xie.
+\newblock Deep learning prediction of chemical-induced dose-dependent and context-specific multiplex phenotype responses and its application to personalized alzheimer’s disease drug repurposing.
+\newblock {\em PLoS computational biology}, 18(8):e1010367, 2022.
+
+\end{thebibliography}
