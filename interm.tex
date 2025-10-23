@@ -84,9 +84,9 @@
 \section{Introduction}
 
 \subsection{Introduction}
-Data-driven mechanisms of action (MoA) prediction is made possible by the large-scale, huge drug-cell response profiles provided by high-throughput perturbational transcriptomics, especially the LINCS L1000 collection. However, in practice, these datasets are difficult to use consistently because of a combination of inherent technical/inferential noise (most landmark genes are inferred, while only 978 are directly measured), batch and assay artefacts, and frequent gaps or inconsistencies in metadata. These factors collectively weaken model generalisation and reduce reproducibility.However, integrating transcriptome signals with external data like drug chemical structure, protein-protein interaction networks, and Gene Ontology hierarchies is both beneficial and challenging, requiring careful representation learning and cross-modal alignment\cite{subramanian2017next,stathias2018sustainable,mcdermott2019deep,wu2022deep}
+Data-driven mechanisms of action (MoA) prediction is made possible by the large-scale, huge drug-cell response profiles provided by high-throughput perturbational transcriptomics, especially the LINCS L1000 collection. However, in practice, these datasets are very difficult to use consistently because of a combination of inherent technical/inferential noise (most landmark genes are inferred, while only 978 are directly measured), batch and assay artefacts, and frequent gaps or inconsistencies in metadata. These factors collectively weaken model generalisation and reduce reproducibility. However, integrating transcriptome signals with external data like drug chemical structure, protein-protein interaction networks, and Gene Ontology hierarchies is both beneficial and challenging, requiring careful representation learning and cross-modal alignment\cite{subramanian2017next,stathias2018sustainable,mcdermott2019deep,wu2022deep}
 
-In order to address these problems, this project (i) thoroughly examines previous and present computational pipelines for L1000-based MoA prediction in order identify failure modes and best practices (ii) In order to improve interpretability and generalisation, a modular, reproducible framework that simplifies data-centric cleaning and metadata consistency, integrates robust/model-centric training procedures, and incorporates external biological knowledge is proposed. Explainable AI is a key focus, in addition to attaining high accuracy, we want to make model reasoning auditable by connecting predictions to pharmacological substructures, genes, and pathways, making the resulting MoA hypotheses easier to evaluate and scientifically significant\cite{duan2016l1000cds2,stahlschmidt2022multimodal,samal2022opportunities}
+In order to address these problems, this project (i) Critically examines previous and present computational pipelines for L1000-based MoA prediction in order identify failure modes and best practices (ii) In order to improve interpretability and generalisation, a modular, reproducible framework that simplifies data-centric cleaning and metadata consistency, integrates robust/model-centric training procedures, and incorporates external biological knowledge is proposed. Explainable AI is a key focus, in addition to attaining high accuracy, we want to make model reasoning auditable by connecting predictions to pharmacological substructures, genes, and pathways, making the resulting MoA hypotheses easier to evaluate and scientifically significant\cite{duan2016l1000cds2,stahlschmidt2022multimodal,samal2022opportunities}
 
 
 \subsection{Problem Definition}
@@ -98,7 +98,7 @@ These are our original research questions:
   \item \textbf{R3:} Are there frameworks that effectively integrate external knowledge (e.g., drug structures, biological networks) with transcriptomic data, and how do they impact model interpretability, generalizability, and explainability?
 \end{itemize}
 
-R1 compares techniques under accuracy,scalability,interpretability trade-offs. R2 quantifies the impact of data quality and evaluates mitigation strategies. R3 studies how integrating external knowledge improves interpretability and generalization.
+R1 compares techniques about accuracy, scalability, interpretability trade-offs. R2 quantifies the impact of data quality and evaluates mitigation strategies. R3 studies how integrating external knowledge can imprive the interpretability and generalization of the model.
 
 
 \noindent
@@ -114,7 +114,7 @@ These problems motivate our research questions:
 \noindent
 Thus, the main issue this study attempts to solve is the absence of a single computational framework that simultaneously guarantees resilience against data noise, incorporates outside biological knowledge for mechanistic background, and makes its predictions easily interpretable.
 
-\subsection{Objective of the Research}
+\subsection{Objective of the Research}\label{subsec:Objective of the Research}
 The primary objective of this research is to design, develop, and evaluate a novel, end-to-end computational framework that significantly improves the robustness, biological relevance, and interpretability of drug Mechanism of Action (MoA) prediction from LINCS L1000 data.To achieve this overarching goal, the research is guided by the following specific objectives (derived from the corresponding research questions R1, R2, and R3).
 \\ 
 \\
@@ -127,7 +127,7 @@ The primary objective of this research is to design, develop, and evaluate a nov
 \textbf{Objective 4: To Deliver Transparent and Auditable Explanations (XAI)} To integrate Explainable AI (XAI) techniques into the framework. The goal is not only to achieve high accuracy but also to make the model’s predictions transparent, allowing researchers to understand the underlying biological drivers (e.g., key genes, pathways) behind its decisions.
 
 \subsection{Scope of the Research}
-In particular, the LINCS L1000 dataset analysis is the main focus of this study.  There are more transcriptome datasets, but they are considered outside the purview of this project's main analysis and framework creation. The main objective is to anticipate the Mechanism of Action (MoA) of a medicine.  External knowledge will only be incorporated into the suggested computational framework from publically accessible biological resources, such as the Gene Ontology (GO) hierarchy and the STRING database for protein-protein interactions.
+In particular, the LINCS L1000 dataset analysis is the main focus of this study.  There are more transcriptome datasets, but they are considered outside the purview of this project's main analysis and framework creation. The main objective is to anticipate the Mechanism of Action (MoA) of a medicine.  External knowledge will only be incorporated into the suggested computational framework from publicly accessible biological resources, such as the Gene Ontology (GO) hierarchy and the STRING database for protein-protein interactions.
 \\
 The primary deliverables for this project are:
 \begin{itemize}
@@ -140,9 +140,10 @@ Some key assumptions are made when operating the project.\\
 (i) that the biological annotations from external databases are sufficiently accurate to provide meaningful context\\ (ii) that a learnable signal correlating to drug MoA exists within the noisy L1000 data and\\(iii) that the 978 landmark genes serve as an effective proxy for the full transcriptome
 The research is bound by several constraints, including the computational resources (GPU/CPU time) available for training complex models, and the inherent limitations in the \enquote{ground truth} MoA labels, which can be incomplete or ambiguous.
 
+
 %--- Chapter 2 ---%
 \section{Literature Review}
-This review looks at methods for predicting drug mechanisms of action (MoA) from LINCS/CMap (L1000) transcriptomic data, organized along three themes that showcase our research questions: \\(R1) Techniques and the accuracy,scalability,interpretability trade-off \\ (R2) Data-quality issues and mitigation; and \\(R3) Integration of external biological knowledge for contextual, auditable predictions.
+This review looks at methods for predicting drug mechanisms of action (MoA) from LINCS/CMap (L1000) transcriptomic data, organized along three themes that showcase our research questions: \\(R1) Techniques and the accuracy, scalability, interpretability trade-off \\ (R2) Data-quality issues and mitigation; and \\(R3) Integration of external biological knowledge for contextual, auditable predictions.
 
 \subsection{Early Approaches: Signature Similarity \& Classical ML (R1)}
 According to the Connectivity Map concept, medications with comparable gene-expression profiles have similar molecular patterns.  Large retrieval operations were made possible by the availability of scalable profiles (MODZ-aggregated signatures) by the next-generation CMap/L1000\cite{subramanian2017next}. To improve signal quality, Characteristic Direction (CD) signatures replaced naive fold-change or $t$-statistics, yielding more accurate reversal/connection performance\cite{duan2016l1000cds2}. Traditional machine learning (ML) baselines (RF, SVM, regularised logistic/XGBoost) became competitive as datasets increased. Optimised pipelines like WRFEN, XGBoost demonstrate that resilient learners and good feature engineering may compete with deeper models on certain specific tasks\cite{lu2021drug}.\\
@@ -155,14 +156,14 @@ Benchmarks show multilayer perceptrons (MLPs) typically perform better than clas
 \textbf{Weaknesses:} opacity (\enquote{black boxes}), data-hungry, sensitive to dataset noise if not handled explicitly.
 
 \subsection{Data Quality in L1000 \& Mitigation (R2)}
-L1000 measures 978 landmark genes and infers the remainder computationally, introducing inferential noise alongside batch/assay artefacts and metadata inconsistencies\cite{subramanian2017next,mcdermott2019deep}. Peak-calling/deconvolution instabilities in the original pipeline have motivated GMM/AGMM and Bayesian deconvolution, which reduce errors\cite{qiu2020bayesian}. Replicate-correlation filtering and better signature generation (e.g., CD) increase signal-to-noise; model-guided augmentation can salvage high-quality replicates otherwise flagged as noisy\cite{szalai2019signatures,duan2016l1000cds2,pham2021deep}. On the model side, robust losses, co-teaching/curriculum learning, and semi/self-supervised pretraining improve resilience to label and feature noise.\\
-\textbf{Strengths:} measurable SNR gains; improved reproducibility and downstream accuracy.
-\textbf{Weaknesses:} heterogeneous, structured noise remains challenging; label/metadata gaps are non-trivial to repair at scale.
+In addition to batch/assay artefacts and metadata inconsistencies, L1000 introduces inferential noise while measuring 978 landmark genes and computationally calculating the remaining genes\cite{subramanian2017next,mcdermott2019deep}. Peak-calling/deconvolution instabilities in the original pipeline have motivated GMM/AGMM and Bayesian deconvolution, which reduce errors\cite{qiu2020bayesian}. Replicate-correlation filtering and better signature generation (e.g., CD) increase signal-to-noise while model-guided augmentation can salvage high-quality replicates which are flagged as noisy\cite{szalai2019signatures,duan2016l1000cds2,pham2021deep}. Sensitivity to label and feature noise is enhanced on the model side by semi-/self-supervised pretraining, resilient losses, and co-teaching/curriculum learning.\\
+\textbf{Strengths:} measurable SNR gains, improved reproducibility and downstream accuracy.
+\textbf{Weaknesses:} heterogeneous, structured noise remains challenging, label/metadata gaps are non-trivial to repair at scale.
 
 \subsection{Knowledge Integration for Context \& Interpretability (R3)}
-Expression alone provides correlations, not mechanisms. Integrating drug structure and biological networks (PPIs, Gene Ontology) adds context\cite{liu2015compound}. Multimodal fusion strategies (early/intermediate/late) show that intermediate or attention-based fusion often outperforms naive concatenation\cite{stahlschmidt2022multimodal}. Cross-attention aligns modalities, while knowledge-infused architectures (e.g., GNNs on PPI, GO-hierarchy layers/DrugCell-style designs) embed biological priors so that internal activations have pathway-level meaning\cite{elabd2024simple,mcdermott2019deep,samal2022opportunities}. Surveys frame this direction as essential to balance accuracy with actionable transparency\cite{chow2022predicting}.\\
-\textbf{Strengths:} improved accuracy and out-of-distribution robustness; pathway/target-grounded explanations (“glass-box”).
-\textbf{Weaknesses:} integration pipelines are complex; depend on quality/coverage of external knowledge bases.
+Expression alone provides correlations, not mechanisms. Integrating drug structure and biological networks (PPIs, Gene Ontology) adds context\cite{liu2015compound}. Early, mid, and late multimodal fusion techniques demonstrate that attention-based or intermediate fusion frequently performs better than naive concatenation\cite{stahlschmidt2022multimodal}.While knowledge infused architectures (such as GNNs on PPI, GO-hierarchy layers, or DrugCell style designs) integrate biological priors so that internal activations have pathway level significance, cross-attention aligns modalities\cite{elabd2024simple,mcdermott2019deep,samal2022opportunities}. Surveys frame this direction as essential to balance accuracy with actionable transparency\cite{chow2022predicting}.\\
+\textbf{Strengths:} improved accuracy and out-of-distribution robustness, pathway/target-grounded explanations (\enquote{glass-box}).
+\textbf{Weaknesses:} integration pipelines are complex, depend on quality/coverage of external knowledge bases.
 \\ \\
 
 \subsection{Comparative Summary}
@@ -174,17 +175,17 @@ Expression alone provides correlations, not mechanisms. Integrating drug structu
     \textbf{Family} & \textbf{Typical setup} & \textbf{Strengths} & \textbf{Weaknesses} \\
     \midrule
     Signature similarity (CMap/CD) &
-    MODZ/CD signatures; retrieval/reversal scoring \cite{subramanian2017next,duan2016l1000cds2} &
-    Simple, scalable; quick screening &
-    Correlational; limited mechanism; sensitivity to noise \\
+    MODZ/CD signatures, retrieval/reversal scoring\cite{subramanian2017next,duan2016l1000cds2} &
+    Simple, scalable, quick screening &
+    Correlational, limited mechanism, sensitivity to noise \\
     \addlinespace
     Classical ML (RF/SVM/XGBoost) &
-    Engineered features from L1000; optimized pipelines \cite{lu2021drug} &
+    Engineered features from L1000; optimized pipelines\cite{lu2021drug} &
     Fast; decent accuracy; interpretable features &
     Limited nonlinearity; weaker cross-context performance \\
     \addlinespace
     MLPs (deep baselines) &
-    Expression-only deep encoders \cite{mcdermott2019deep} &
+    Expression-only deep encoders\cite{mcdermott2019deep} &
     Strong accuracy; flexible &
     Black-box; noise-sensitive without robust training \\
     \addlinespace
@@ -202,22 +203,23 @@ Expression alone provides correlations, not mechanisms. Integrating drug structu
 \end{table}
 
 \subsection{Gaps and Opportunities}
-(i) \textbf{Quantitative validation of explanations} remains limited—many works rely on anecdotal literature matches rather than faithfulness tests and perturbation-based validation. (ii) \textbf{Generalization to unseen contexts} (cell types, doses, time points) still lags, especially under structured, real-world noise. (iii) \textbf{Seamless knowledge ingestion} (ID harmonization; stable fusion of structure/PPIs/GO) requires standardized, reproducible pipelines. These gaps motivate our objectives: standardized data/metadata handling (R2), knowledge-infused architectures (R3), and systematic baselines with robustness and interpretability evaluations (R1–R3).
+(i) \textbf{Quantitative validation of explanations} remains limited. Many works rely on anecdotal or unreliable literature matches rather than faithfulness tests and perturbation-based validation.\\(ii) \textbf{Generalization to unseen contexts} (cell types, doses, time points) still lags, especially under structured, real-world noise that changes all the time.\\(iii) \textbf{Seamless knowledge ingestion} (ID harmonization; stable fusion of structure/PPIs/GO) requires standardized, reproducible pipelines, like a universal adapter.\\ These gaps motivate our objectives: standardized data/metadata handling (R2), knowledge-infused architectures (R3), and systematic baselines with robustness and interpretability evaluations (R1,R3).
 
 
 %--- Chapter 3 ---%
 \section{Methodology}
-This research adopts the \textbf{Design Science Research Methodology (DSRM)}, a well-established framework for creating and evaluating novel artifacts in information systems and computer science. The primary goal of DSRM is to develop solutions to real-world problems through the design, implementation, and evaluation of a new technological artifact. In the context of this project, the \textbf{artifact} is the proposed computational framework for robust and interpretable Mechanism of Action (MoA) prediction.
+This research uses the \textbf{Design Science Research Methodology (DSRM)}, an established and a well known framework for creating and evaluating novel artifacts in information systems and computer science. The main,primary goal of using DSRM is to develop solutions to real-world problems through the design, implementation, and evaluation of a new technological artifact. Here, the \textbf{artifact} we talk in this project is the proposed computational framework for robust and interpretable Mechanism of Action (MoA) prediction.
 
-The DSRM process is iterative and follows a set of logical steps, which are mapped to this research as follows:
+The DSRM process is iterative and follows a set of logical steps, and here we see how they are applied for this project:
 \begin{itemize}
-    \item \textbf{1. Problem Identification and Motivation:} This initial step involves defining the research problem and justifying the value of a solution. This was accomplished through the comprehensive literature review (Chapter 2), which identified the key challenges in the current state-of-the-art: a lack of robustness to data noise, limited biological context, and poor model interpretability, which together hinder the clinical translation of existing models.
+    \item \textbf{1. Problem Identification and Motivation:} This first step involves carefully looking at the research problem and justifying the value of a solution. This was accomplished by completing the comprehensive literature review (Chapter 2), which identified the key challenges in the current available, existing methods. Throughout this paper, it is noted that the clinical translation of current models suffers by a lack of robustness to data noise, limited biological context, and poor model interpretability.
 
-    \item \textbf{2. Define the Objectives for a Solution:} Based on the identified problems, this step defines the goals for the new artifact. As outlined in Section 1.3, the objectives for the proposed framework are to achieve high predictive accuracy while simultaneously ensuring robustness, integrating external biological knowledge, and providing transparent, interpretable predictions.
+    \item \textbf{2. Define the Objectives for a Solution:}This step decides the objectives for the new artefact based on the issues that have been identified. The goals of the suggested framework, as stated in Section\ref{subsec:Objective of the Research},are to provide transparent, interpretable predictions, integrate external biological knowledge, and ensure robustness while achieving high predictive accuracy.
 
-    \item \textbf{3. Design and Development:} This is the core construction phase where the artifact is created. This research will involve the design and implementation of a multi-stage software pipeline in Python. Key development activities will include:
+    \item \textbf{3. Design and Development:} This is the core, main, importaant construction phase where the artifact is created. This research will include the design and implementation of a multi-stage software pipeline in Python. Key development activities will include:
         \begin{itemize}
-            \item Implementing a data-centric preprocessing module to normalize data and mitigate batch effects.
+            \item Make a baseline and replicate the current procedures. 
+            \item UUsing what is already known, a data-centric preprocessing module is implemented to reduce batch effects and normalise data.
             \item Constructing a knowledge graph from external databases (e.g., STRING, Gene Ontology).
             \item Building a novel deep learning architecture that integrates the knowledge graph and transcriptomic data.
             \item Integrating Explainable AI (XAI) algorithms into the output layer of the model.
@@ -225,29 +227,30 @@ The DSRM process is iterative and follows a set of logical steps, which are mapp
 
     \item \textbf{4. Demonstration:} In this step, the artifact is used to solve the problem. The developed framework will be applied to the LINCS L1000 dataset to predict the MoA for a curated set of chemical compounds, demonstrating its end-to-end functionality.
 
-    \item \textbf{5. Evaluation:} This step involves measuring how well the artifact achieves its objectives. The framework will be rigorously evaluated using a two-pronged approach:
+    \item \textbf{5. Evaluation:} This step involves measuring how well the artifact achieves and completes its objectives. The framework will be carefully evaluated using a two stepped approach:
         \begin{itemize}
             \item \textbf{Quantitative Evaluation:} The model's predictive performance (e.g., F1-score, accuracy) will be measured and compared against the baseline models identified in the literature review.
-            \item \textbf{Qualitative Evaluation:} The XAI outputs will be used to conduct case studies on specific drug predictions. The goal is to demonstrate that the model's explanations are biologically plausible and provide novel insights that align with known pharmacology.
+            \item \textbf{Qualitative Evaluation:}The XAI findings will be used to carry out case studies on specific medication predictions. The goal is to demonstrate that the model's explanations are physiologically sound and provide unique insights that correspond with existing pharmacology.
         \end{itemize}
 
-    \item \textbf{6. Communication:} The final step is to communicate the research to a wider audience. The findings, the framework's design, and its utility will be formally documented and communicated through the final research thesis and potentially a journal or conference publication.
+    \item \textbf{6. Communication:} Sharing the findings with a larger audience is the last phase. The final research thesis and possibly a journal or conference publication will serve as official documentation and communication of the findings, the design of the framework, and its value.
 \end{itemize}
+
 
 %--- Chapter 4 ---%
 \section{Progress}
 
 \subsection{Current Progress}
-Significant progress has been made in both the theoretical and practical phases of this research project. The work completed to date has established a strong foundation for the development of the novel computational framework.
+This research project has moved forward in both its theoretical and practical stages. A solid basis has been laid by the work done at this point for the creation of the new computational framework.
 
 \begin{itemize}
-    \item \textbf{Systematic Literature Review (SLR) Completed:} A comprehensive SLR has been successfully completed, and a full manuscript detailing the findings has been drafted. This review systematically analyzed 26 primary research articles, establishing a performance baseline for existing models, identifying key data-related challenges, and mapping the current landscape of interpretability techniques. The insights from this review directly inform the design and objectives of the proposed framework.
+    \item \textbf{Systematic Literature Review (SLR) Completed:}A detailed SLR manuscript has been finished, and a complete manuscript outlining the results has been written.  In order to map the current state of interpretability techniques, identify important data-related challenges, and establish a performance baseline for current models, this review carefully examined 28 primary research articles.  The design and goals of the suggested framework are directly influenced by the review's findings.
 
-    \item \textbf{Framework Development Initiated:} The foundational work for the software implementation has commenced. This preparatory phase is critical for ensuring a modular, reproducible, and well-documented project. Key achievements include:
+    \item \textbf{Framework Development Initiated:} The software implementation's foundational work has begun. For a project to be modular, reproducible, and thoroughly documented, this preparatory stage is important. Among the key results are:
     \begin{itemize}
-        \item \textbf{Technology Stack Selection:} The core technologies have been selected, including Python as the primary language, PyTorch for deep learning, PyG (PyTorch Geometric) for graph neural networks, and RDKit for handling chemical structures.
-        \item \textbf{Project Scaffolding:} A modular codebase structure has been designed and created. This separates concerns for data preprocessing, model architecture, training, and evaluation, facilitating organized development.
-        \item \textbf{Version Control and Experiment Tracking:} A Git repository has been established for robust version control. Furthermore, a strategy for documenting and maintaining different baseline models from the literature has been implemented to ensure reproducible and fair comparison of results.
+        \item \textbf{Technology Stack Selection:} Python has been chosen as the main language, along with PyTorch for deep learning, PyG (PyTorch Geometric) for graph neural networks, and RDKit for chemical structure handling.
+        % \item \textbf{Project Scaffolding:} A modular codebase structure has been designed and created. This separates concerns for data preprocessing, model architecture, training, and evaluation, facilitating organized development.
+        \item \textbf{Version Control and Experiment Tracking:} A Git repository has been established for robust version control. Furthermore, a strategy for documenting and maintaining different baseline models from the literature has been designed to ensure reproducible and fair comparison of results, and it is in progress to be implemented.
     \end{itemize}
 \end{itemize}
 
@@ -255,28 +258,28 @@ Significant progress has been made in both the theoretical and practical phases 
 The remainder of the research will focus on the development, evaluation, and documentation of the proposed framework. The following is a projected timeline to guide the project toward completion.
 
 \begin{itemize}
-    \item \textbf{Phase 1: Data Pipeline and Feature Engineering (3 Months: Nov 2025 - Jan 2026)}
+    \item \textbf{Phase 1: Data Pipeline and Feature Engineering}
         \begin{itemize}
-            \item Implement the full data ingestion and cleaning pipeline for the LINCS L1000 dataset.
+            \item Implement the data ingestion and cleaning pipeline for the LINCS L1000 dataset.
             \item Develop the module for constructing and integrating the biological knowledge graph.
             \item Generate and validate the final, enriched feature sets for the modeling phase.
         \end{itemize}
     
-    \item \textbf{Phase 2: Model Development and Training (4 Months: Feb 2026 - May 2026)}
+    \item \textbf{Phase 2: Model Development and Training}
         \begin{itemize}
             \item Implement and train the baseline models identified in the SLR for direct comparison.
             \item Design and implement the novel knowledge-infused deep learning architecture.
             \item Conduct extensive training experiments, including hyperparameter tuning and optimization.
         \end{itemize}
         
-    \item \textbf{Phase 3: Evaluation and Analysis (2 Months: June 2026 - July 2026)}
+    \item \textbf{Phase 3: Evaluation and Analysis}
         \begin{itemize}
             \item Perform a rigorous quantitative evaluation of the final model against the baselines.
             \item Conduct a qualitative evaluation using the integrated XAI techniques to produce and analyze case studies for specific drug predictions.
             \item Synthesize all results and draw final conclusions.
         \end{itemize}
         
-    \item \textbf{Phase 4: Thesis Finalization (3 Months: Aug 2026 - Oct 2026)}
+    \item \textbf{Phase 4: Thesis Finalization}
         \begin{itemize}
             \item Write the remaining chapters of the final research thesis (Methodology, Results, Discussion).
             \item Revise, proofread, and format the complete manuscript.
@@ -287,9 +290,9 @@ The remainder of the research will focus on the development, evaluation, and doc
 %--- Chapter 5 ---%
 \section{Summary}
 
-This research project addresses critical limitations in the computational analysis of the LINCS L1000 dataset for drug discovery. While existing models can predict a drug's Mechanism of Action (MoA), they often lack robustness against data noise and are too opaque to be trusted in a clinical context. The primary contribution of this work is the design and development of a unified, end-to-end computational framework that overcomes these issues. The proposed framework is built on three pillars: (1) a robust data preprocessing pipeline to mitigate technical noise, (2) the integration of external biological knowledge graphs to provide mechanistic context, and (3) the implementation of Explainable AI (XAI) to ensure that all predictions are transparent and interpretable. The ultimate goal is to produce a more reliable and scientifically valuable tool for accelerating drug discovery.
+This study tackles important issues with the LINCS L1000 dataset's computational analysis for drug discovery. Current models can predict a drug's Mechanism of Action (MoA), but they are often inaccurate and unreliable against data noise to be used confidently in a clinical setting.  The primary contribution of this work is the development of a consistent, end-to-end computational framework that tackles these issues. Three key components support the suggested framework: (1) a strong pipeline for preprocessing data to reduce technical noise; (2) the integration of external biological knowledge graphs to offer mechanistic context; and (3) the use of Explainable AI (XAI) to guarantee that all predictions are clear and understandable. The ultimate objective is to create a more dependable and useful scientific tool for speeding up drug discovery.
 
-The project is currently at a key transition point. The foundational phase, a comprehensive Systematic Literature Review, has been completed, and a full manuscript has been drafted. This review has successfully established performance baselines and identified the specific gaps in the literature that the proposed framework will address. Based on these findings, the initial technical work for the framework has commenced, including the selection of the technology stack, the creation of a modular codebase, and the implementation of version control. The project is now moving from the literature analysis phase into the core development and implementation of the novel framework, as detailed in the future time plan.
+Right now, the project is at a crucial turning point. A thorough Systematic Literature Review, the first step, has been finished, and a complete manuscript has been written.  Performance baselines and the precise gaps in the literature that the suggested framework will fill have been successfully established by this review.  The framework's initial technical work, which includes choosing the technology stack, developing a modular codebase, and putting version control in place, has started in response to these findings.  According to the future time plan, the project is currently progressing from the literature analysis phase into the core development and implementation of the novel framework.
 
 %--- References ---%
 \bibliographystyle{plain}

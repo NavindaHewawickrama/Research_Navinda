@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.29)  23 OCT 2025 08:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.29)  23 OCT 2025 11:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -356,11 +356,6 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 96
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (3.47131pt too wide) in paragraph at lines 101--102
-[]\OT1/lmr/m/n/12 R1 com-pares tech-niques un-der ac-cu-racy,scalability,interpretability trade-offs. R2 quan-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 104--107
 
  []
@@ -382,201 +377,216 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--128
 
 
 [2]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 148.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 149.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 148.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 149.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 148.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 149.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 148.
+(Font)              <12> on input line 149.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 148.
+(Font)              <8> on input line 149.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 148.
+(Font)              <6> on input line 149.
 
-Overfull \hbox (2.13982pt too wide) in paragraph at lines 148--151
+Overfull \hbox (2.13982pt too wide) in paragraph at lines 149--152
 \OT1/lmr/m/n/12 According to the Con-nec-tiv-ity Map con-cept, med-i-ca-tions with com-pa-ra-ble gene-expression
  []
 
 
 
 [3]
-Overfull \hbox (20.72997pt too wide) in paragraph at lines 158--161
-\OT1/lmr/m/n/12 Peak-calling/deconvolution in-sta-bil-i-ties in the orig-i-nal pipeline have mo-ti-vated GMM/AGMM
+Overfull \hbox (18.97806pt too wide) in paragraph at lines 164--168
+\OT1/lmr/bx/n/12 Strengths: \OT1/lmr/m/n/12 im-proved ac-cu-racy and out-of-distribution ro-bust-ness, pathway/target-grounded
  []
 
 
-Overfull \hbox (19.15213pt too wide) in paragraph at lines 163--167
-\OT1/lmr/bx/n/12 Strengths: \OT1/lmr/m/n/12 im-proved ac-cu-racy and out-of-distribution ro-bust-ness; pathway/target-grounded
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
 
  []
 
 
 
 [4{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Underfull \hbox (badness 1960) in paragraph at lines 176--176
+Underfull \hbox (badness 1960) in paragraph at lines 177--177
 []\OT1/lmr/m/n/12 Signature sim-i-lar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
-[]\OT1/lmr/m/n/12 MODZ/CD sig-na-tures;
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[]\OT1/lmr/m/n/12 MODZ/CD sig-na-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 178--178
-[]\OT1/lmr/m/n/12 Simple, scal-able;
+\OT1/lmr/m/n/12 tures, re-trieval/reversal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-\OT1/lmr/m/n/12 ited mech-a-nism;
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+[]\OT1/lmr/m/n/12 Simple, scal-able,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--181
-[]\OT1/lmr/m/n/12 Classical ML
- []
-
-
-Overfull \hbox (13.8694pt too wide) in paragraph at lines 181--181
-\OT1/lmr/m/n/12 (RF/SVM/XGBoost)| 
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+\OT1/lmr/m/n/12 ited mech-a-nism,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 182--182
+[]\OT1/lmr/m/n/12 Classical ML
+ []
+
+
+Overfull \hbox (13.8694pt too wide) in paragraph at lines 182--182
+\OT1/lmr/m/n/12 (RF/SVM/XGBoost)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
 []\OT1/lmr/m/n/12 Engineered fea-tures
  []
 
 
-Underfull \hbox (badness 2790) in paragraph at lines 182--182
+Underfull \hbox (badness 2790) in paragraph at lines 183--183
 \OT1/lmr/m/n/12 from L1000; op-ti-mized
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 []\OT1/lmr/m/n/12 Limited non-lin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 \OT1/lmr/m/n/12 ear-ity; weaker
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 184--185
+Underfull \hbox (badness 2269) in paragraph at lines 185--186
 \OT1/lmr/m/n/12 cross-context per-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/lmr/m/n/12 Expression-only deep
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--189
 []\OT1/lmr/m/n/12 Strong ac-cu-racy;
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 189--190
+Underfull \hbox (badness 2913) in paragraph at lines 190--191
 []\OT1/lmr/m/n/12 Black-box; noise-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 \OT1/lmr/m/n/12 sensitive with-out
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--191
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []\OT1/lmr/m/n/12 GNNs / GO-
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 192--192
+Underfull \hbox (badness 1946) in paragraph at lines 193--193
 \OT1/lmr/m/n/12 pass-ing; in-trin-sic in-ter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 []\OT1/lmr/m/n/12 Mechanism
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 \OT1/lmr/m/n/12 ground-ing;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
 \OT1/lmr/m/n/12 pathway-level
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 []\OT1/lmr/m/n/12 Data/knowledge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 \OT1/lmr/m/n/12 hun-gry; in-te-gra-
  []
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 196--196
+Underfull \hbox (badness 1325) in paragraph at lines 197--197
 []\OT1/lmr/m/n/12 Attention/ Trans-
  []
 
 
-Underfull \hbox (badness 4341) in paragraph at lines 196--196
+Underfull \hbox (badness 4341) in paragraph at lines 197--197
 \OT1/lmr/m/n/12 form-ers / mul-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--197
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []\OT1/lmr/m/n/12 Cross-attention; ex-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--197
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 \OT1/lmr/m/n/12 pres-sion+structure;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--197
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 \OT1/lmr/m/n/12 knowledge-aware en-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 199--199
 []\OT1/lmr/m/n/12 SOTA ac-cu-racy;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 199--199
 \OT1/lmr/m/n/12 struc-ture{gene
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 []\OT1/lmr/m/n/12 Computationally
  []
 
 
-Overfull \hbox (16.13249pt too wide) in paragraph at lines 172--202
+Overfull \hbox (16.13249pt too wide) in paragraph at lines 173--203
  [][] 
+ []
+
+
+Overfull \hbox (27.28566pt too wide) in paragraph at lines 206--207
+\OT1/lmr/m/n/12 (iii) \OT1/lmr/bx/n/12 Seam-less knowl-edge in-ges-tion \OT1/lmr/m/n/12 (ID har-mo-niza-tion; sta-ble fu-sion of struc-ture/PPIs/GO)
+ []
+
+
+Overfull \hbox (11.51395pt too wide) in paragraph at lines 206--207
+\OT1/lmr/m/n/12 These gaps mo-ti-vate our ob-jec-tives: stan-dard-ized data/metadata han-dling (R2), knowledge-
  []
 
 
@@ -600,18 +610,18 @@ Package rerunfilecheck Info: File `interm.out' has not changed.
 (rerunfilecheck)             Checksum: A110C76B1E3E290C7C42844266FA9871;3114.
  ) 
 Here is how much of TeX's memory you used:
- 10209 strings out of 469685
- 160358 string characters out of 5476653
- 587071 words of memory out of 5000000
- 38491 multiletter control sequences out of 15000+600000
+ 10210 strings out of 469685
+ 160392 string characters out of 5476653
+ 586126 words of memory out of 5000000
+ 38492 multiletter control sequences out of 15000+600000
  658386 words of font info for 58 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 75i,11n,79p,997b,628s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1003b,624s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on interm.pdf (11 pages, 1254008 bytes).
+Output written on interm.pdf (11 pages, 1253961 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
+ 216 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  44 named destinations out of 1000 (max. 500000)
  142 words of extra memory for PDF output out of 10000 (max. 10000000)
 
