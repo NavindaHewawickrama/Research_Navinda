@@ -1,10 +1,12 @@
-\documentclass[twocolumn,12pt,a4paper]{article}
+\documentclass[twocolumn,11pt,a4paper]{article}
+\usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
 \usepackage[numbers]{natbib} % optional
 \usepackage{booktabs}
 \usepackage{csquotes}
 \usepackage{afterpage}
+
 
 \title{Interpretable Deep Learning for Robust Drug Mechanism Prediction \\ in High-Throughput Gene Expression Data}
 \author{Navinda Hewawickrama \& Sugandima Vidanagamachchi}
@@ -42,7 +44,7 @@ The article is divided into sections, which will help us understand the process.
 The Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines were followed to produce a systematic review\cite{page2021prisma}.\linebreak PRISMA is a standard methodology that maintains and ensures a certain level of quality in the review process. The review protocol was developed by defining the article selection criteria, search strategy, data extraction, and data analysis procedures.
 
 \subsection{Eligibility Criteria}\label{subsec:Eligibility Criteria}
-Based on the search strategy, an initial screening of study titles and abstracts was performed to identify articles that focus on LINCS L1000 data analytics, drug mechanism prediction, and methods for handling data quality issues in genomic or biomedical contexts. Articles that met the following criteria were included for study selection: 
+Based on the search strategy, an initial screening of titles and abstracts of studies were performed to identify articles that focus on LINCS L1000 data analytics, drug mechanism prediction, and methods for handling data quality issues in genomic or biomedical contexts. Articles that met the following criteria were included for study selection: 
 \\
 \textbf{Topic: }Focused on mechanisms of action (MoA) prediction, target identification, or related pharmacogenomic tasks like drug repurposing and toxicity screening using LINCS L1000 gene expression data.
 \\
@@ -73,16 +75,7 @@ The search was constructed using a combination of keywords related to the core c
     \item  \textbf{Challenges:} `metadata incompleteness',`missing data imputation', `deep learning imputation', `data inconsistencies'
     \item  \textbf{Data integration:} `knowledge graph', `multi-source integration', `multimodal fusion'
 \end{itemize}
-A sample search string used in PubMed was\\
-\\
-(`LINCS L1000' OR `Library of Integrated Network-Based Cellular Signature') AND 
-(`drug mechanism' OR `mechanism of action' OR `MoA prediction') AND 
-(`gene expression' OR `pharmacogenomics') AND 
-(`machine learning' OR `deep learning' OR `knowledge graph') AND 
-(`metadata' OR `missing data' OR `data integration')
-\\
-Search strategies were adapted for each database as appropriate.
-Search strings used to search relevant papers.
+These search stratergies were used in the mentioned databases to serach for relevant papers that match the eligibiity criterias.
 \begin{enumerate}
     \item \textbf{Broad Search for Core Methods:} This string is designed to find the most common papers that apply machine learning or deep learning to LINCS L1000 for MoA prediction.
     (`LINCS L1000' OR `Connectivity Map') AND (`drug mechanism of action' OR `MoA prediction') AND (`machine learning' OR `deep learning')
@@ -111,14 +104,14 @@ Articles that passed the initial screening were recorded, and the full text was 
 \midrule
 \multicolumn{2}{l}{\textit{Inclusion}} \\
 IN1 & Uses LINCS L1000/Connectivity Map transcriptomic profiles. \\
-IN2 & Addresses MoA prediction or directly relevant drug-response tasks. \\
-IN3 & Employs ML/DL and includes an XAI/interpretability component (e.g., attributions, attention analysis, feature importance) or evaluates interpretability/robustness of MoA models. \\
+IN2 & Addresses MoA prediction or directly relevant to drug-response related tasks. \\
+IN3 & Uses ML/DL and has an XAI/interpretability component included (e.g., attributions, attention analysis, feature importance) or evaluates interpretability/robustness of MoA models. \\
 IN4 & Discusses or handles data-quality issues (e.g., replicate noise, inferred genes, metadata gaps) and/or model robustness. \\
-IN5 & Reports evaluation on MoA/response tasks with clear metrics and validation design (e.g., CV, external sets). \\
-IN6 & English language; peer-reviewed venues or high-relevance preprints. \\
+IN5 & Reports on MoA/response tasks with proper evaluation, with clear metrics and validation design (e.g., CV, external sets). \\
+IN6 & English language studies, peer-reviewed venues or high-relevance preprints. \\
 \midrule
 \multicolumn{2}{l}{\textit{Exclusion}} \\
-EX1 & Not LINCS/CMap-based or not computationally relevant to MoA. \\
+EX1 & Not LINCS L1000 based or not relevant to computational predictions related to MoA. \\
 EX2 & Wet-lab/biology-only papers without computational modeling on LINCS/CMap. \\
 EX3 & Purely predictive with no interpretability analysis and no role in a comparative interpretability/robustness synthesis.\\
 EX4 & Opinion/editorial or non-peer-reviewed pieces with no substantive methods (except high-relevance arXiv preprints). \\
@@ -129,14 +122,14 @@ EX6 & Non-English. \\
 \end{table}
 
 \subsection{Data Collection Process}
-The main datasets were downloaded using Gene Expression Omnibus (GEO). 
+The main datasets were downloaded using Gene Expression Omnibus (GEO). The studies included in the literature review is selected using the mentioned mathods.
 
 \subsection{Data Items}
 The following data items were extracted from each included study:
 \begin{itemize}
     \item \textbf{Bibliographic Information: }Authors, title, year of publication, journal/conference.
     \item \textbf{Study Objective: }The primary goal of the research.
-    \item \textbf{Methodology: }The core methods used. The computational model or algorithm used (e.g., Random Forest, FF-ANN, GCNN, Transformer).
+    \item \textbf{Methodology: }The core methods used. The computational model or algorithm used (e.g., Random Forest, FF-ANN, GCNN, Transformer, XAI).
     \item \textbf{Data Modalities: }Types of data used as input (e.g., LINCS gene expression, chemical structures, PPI networks, Gene Ontology).
     \item \textbf{Data Handling: }Specific techniques used to address noise, missing data, or other quality issues.
     \item \textbf{Interpretability: }Methods used to explain or interpret the model's predictions (e.g., feature attribution, attention weights, intrinsically interpretable design).
@@ -186,7 +179,7 @@ The initial search in databases included 5678 records. After removing 1241 dupli
 \subsection{Characteristics of included studies}
 The included studies were published between 2014 and 2025, reflecting the growing interest in this field following major data set releases. The majority of studies were methodological, proposing new computational frameworks, while others were application-focused, using existing methods for specific drug discovery tasks. The most common data source was the LINCS L1000 dataset, often supplemented with drug chemical structures from PubChem or DrugBank and biological network data from sources like STRING DB and Gene Ontology\cite{wang2016drug}.
 
-\begin{figure*}[p]
+\begin{figure*}[htbp]
   \centering
   \includegraphics[width=\textwidth,keepaspectratio]{PRISMASummary.png}
   \caption{PRISMA Flowchart}\label{fig:prisma}
@@ -198,173 +191,229 @@ The included studies were published between 2014 and 2025, reflecting the growin
 \begin{table*}[t]
   \centering
   \caption{PICO analysis for R1 papers MoA prediction from LINCS/CMap.}
-  \begin{tabular}{p{3.1cm} p{4.8cm} p{5.1cm} p{3.3cm}}
+  \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
     \toprule
-    \textbf{Source} & \textbf{Problem} & \textbf{Intervention vs.\ Comparison (I/C)} & \textbf{Outcomes} \\
+    \textbf{Source} & \textbf{Problem} & \textbf{Intervention} & \textbf{Comparison} & \textbf{Outcomes} \\
     \midrule
     \cite{subramanian2017next} (L1000 / CMap v2) &
-    I\@:L1000 perturbational gene-expression profiles across many drugs/cell lines &
-    Signature-similarity framework for drug, drug/MoA relationships;
-    C\@: Prior CMap approaches / null connectivity &
+    L1000 perturbational gene-expression profiles across many drugs/cell lines &
+    Signature-similarity framework for drug, drug/MoA relationships &
+    Prior CMap approaches / null connectivity &
     Improved coverage and scale; supports MoA inference and retrieval \\
     [0.35em]
 
     \cite{duan2016l1000cds2} (L1000CDS2)  &
     L1000 differential expression signatures (landmark/inferred genes) &
-    I\@: Characteristic-Direction based signature search; 
-    C\@: Other similarity/reversal metrics &
+    Characteristic-Direction based signature search & 
+    Other similarity/reversal metrics &
     Better reversal/connection retrieval; practical MoA/repurposing utility \\
     [0.35em]
 
     \cite{el2017integrative} (Integrative approach) &
     LINCS expression + auxiliary biomedical knowledge &
-    I\@: Integrative similarity/knowledge fusion; 
-    C\@: Expression-only similarity &
+    Integrative similarity/knowledge fusion &
+    Expression-only similarity &
     Stronger MoA/indication signals via multimodal integration \\
     [0.35em]
 
     \cite{mcdermott2019deep} (DL benchmarks) &
     L1000 profiles for drug property / MoA categorization &
-    I\@: MLPs (FF-ANN); 
-    C\@: RF/SVM/logistic baselines &
+    MLPs (FF-ANN)&
+    RF/SVM/logistic baselines &
     MLPs outperform classical ML\; interpretability trade-off noted \\
     [0.35em]
 
     \cite{liao2023open} (Open MoA) &
     Public MoA annotations + molecular/network priors &
-    I\@: Network/topology-driven MoA inference; 
-    C\@: Expression-only or shallow models &
+    Network/topology-driven MoA inference&
+    Expression-only or shallow models &
     Competitive MoA accuracy with more interpretable, mechanism-grounded outputs \\
     [0.35em]
 
     \cite{lu2021drug} (WRFEN–XGBoost) &
     L1000 drug, cell line profiles with sparse coverage &
-    I\@: Feature-engineered RF/ElasticNet + XGBoost; 
-    C\@: vanilla RF/SVM baselines &
+    Feature-engineered RF/ElasticNet + XGBoost&
+    vanilla RF/SVM baselines &
     Strong classical pipeline; competitive vs.\ deep models on some tasks \\
     [0.35em]
 
     \cite{pham2021deep} (DeepCE) &
     L1000 with drug structure features &
-    I\@: Attention-based DL linking substructures to gene effects; 
-    C\@: MLP/RF and non-attention models &
-    Higher accuracy; interpretable substructure–gene attributions \\
+    Attention-based DL linking substructures to gene effects& 
+    MLP/RF and non-attention models &
+    Higher accuracy; interpretable substructure gene attributions \\
     [0.35em]
 
     \cite{wu2022deep} (MultiDCP) &
     L1000 across diverse cell types / doses &
-    I\@: Knowledge-aware Transformer for cross-cell generalization; 
-    C\@: expression-only or non-attention DL &
+    Knowledge-aware Transformer for cross-cell generalization&
+    expression-only or non-attention DL &
     Better OOD prediction; sometimes surpassing noisy experimental baselines \\
     [0.35em]
 
     \cite{chow2022predicting} (Survey/context) &
     Pharmacogenomic prediction landscape incl.\ L1000 use-cases &
-    I/C\@: Synthesis of attention/Transformer trends vs.\ prior methods &
+    Synthesis of attention/Transformer trends vs.\ prior methods &
+    Earlier ML / non-attention architectures &
     Frames accuracy, interpretability, scalability trade-offs \\
     \bottomrule
   \end{tabular}
 \end{table*}
+\clearpage
+
+% \begin{table*}[t]
+%   \centering
+%   \caption{PICO analysis for R2: data quality issues in LINCS L1000 and mitigation strategies.}
+%   \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
+%     \toprule
+%     \textbf{Source} & \textbf{Problem} & \textbf{Intervention} & \textbf{Comparison} & \textbf{Outcomes} \\
+%     \midrule
+%     \cite{qiu2020bayesian} &
+%     L1000 bead deconvolution errors and peak-calling instability &
+%     GMM/AGMM and Bayesian deconvolution replacing $k$-means; & Original L1000 $k$-means / default pipeline &
+%     Lower deconvolution error; improved signature reliability and downstream accuracy \\[0.35em]
+
+%     \cite{subramanian2017next} &
+%     L1000 platform with 978 measured + $\sim$11k inferred genes; MODZ aggregation &
+%     Platform-level QC \& aggregation (e.g., MODZ) & 
+%     Naïve averaging / no QC &
+%     Scalable signatures; documents inferential noise sources to consider in modeling \\[0.35em]
+
+%     \cite{szalai2019signatures} &
+%     Replicate inconsistency; metadata/label noise in perturbational transcriptomics &
+%     Replicate-correlation filtering; robust losses/co-teaching framing&
+%      unfiltered data / standard CE loss &
+%     Cleaner training sets; guidance on label-noise sensitivity and mitigation \\[0.35em]
+
+%     \cite{duan2016l1000cds2} &
+%     Noisy DE signatures reduce connectivity/reversal quality &
+%     Characteristic Direction (CD) signature generation&
+%      fold-change / $t$-statistic signatures &
+%     Higher signal-to-noise; better reversal/connectivity retrieval \\[0.35em]
+
+%     \cite{pham2021deep} (DeepCE) &
+%     Noisy or low-quality replicates in L1000 training data &
+%     Model-guided data augmentation \& salvage of reliable replicates & 
+%      standard training without augmentation &
+%     Larger effective clean set; accuracy gains with interpretable attributions \\[0.35em]
+
+%     \cite{bang2024transfer} &
+%     Scarce clean labels; abundant unlabeled/noisy L1000 profiles &
+%     Self/semi-supervised pretraining then fine-tuning & 
+%      supervised from scratch &
+%     More robust representations; better generalization under noise \\[0.35em]
+
+%     \cite{mcdermott2019deep} &
+%     Benchmarks on L1000 for drug/MoA tasks, highlighting noise effects &
+%     MLPs with standard preprocessing; &
+%      RF/SVM/logistic baselines &
+%     DL $>$ classical but sensitive to data quality; motivates robust pipelines \\
+%     \bottomrule
+%   \end{tabular}
+% \end{table*}
 
 \begin{table*}[t]
   \centering
-  \caption{PICO analysis for R2: data quality issues in LINCS L1000 and mitigation strategies.}
-  \begin{tabular}{p{3.1cm} p{4.8cm} p{5.8cm} p{3.3cm}}
+  \caption{Simplified PICO analysis for R2: Data quality issues in LINCS L1000 and key mitigation strategies.}
+  \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
     \toprule
-    \textbf{Source} & \textbf{Problem} & \textbf{Intervention vs.\ Comparison (I / C)} & \textbf{Outcomes} \\
+    \textbf{Source} & \textbf{Problem} & \textbf{Intervention} & \textbf{Comparison} & \textbf{Outcome} \\
     \midrule
-    \cite{qiu2020bayesian} &
-    L1000 bead deconvolution errors and peak-calling instability &
-    I\@: GMM/AGMM and Bayesian deconvolution replacing $k$-means; C\@: original L1000 $k$-means / default pipeline &
-    Lower deconvolution error; improved signature reliability and downstream accuracy \\[0.35em]
+
+    \cite{qiu2020bayesian} & 
+    Errors in bead deconvolution and unstable peak detection in L1000 data. &
+    Used Bayesian and Gaussian Mixture Models (GMM) for deconvolution. &
+    Default L1000 $k$-means approach. &
+    Reduced deconvolution errors and improved data reliability. \\[0.4em]
 
     \cite{subramanian2017next} &
-    L1000 platform with 978 measured + $\sim$11k inferred genes; MODZ aggregation &
-    I\@: Platform-level QC \& aggregation (e.g., MODZ); 
-    C\@: naïve averaging / no QC &
-    Scalable signatures; documents inferential noise sources to consider in modeling \\[0.35em]
+    Limited measured genes and noise in inferred ones. &
+    Applied MODZ aggregation and platform-level quality control. &
+    Simple averaging without QC. &
+    More consistent gene signatures and reduced inferential noise. \\[0.4em]
 
     \cite{szalai2019signatures} &
-    Replicate inconsistency; metadata/label noise in perturbational transcriptomics &
-    I\@: Replicate-correlation filtering; robust losses/co-teaching framing; 
-    C\@: unfiltered data / standard CE loss &
-    Cleaner training sets; guidance on label-noise sensitivity and mitigation \\[0.35em]
+    Inconsistent replicates and noisy metadata/labels. &
+    Used replicate-correlation filtering and robust training methods. &
+    Unfiltered data with standard training. &
+    Cleaner datasets and reduced label noise effects. \\[0.4em]
 
     \cite{duan2016l1000cds2} &
-    Noisy DE signatures reduce connectivity/reversal quality &
-    I\@: Characteristic Direction (CD) signature generation; 
-    C\@: fold-change / $t$-statistic signatures &
-    Higher signal-to-noise; better reversal/connectivity retrieval \\[0.35em]
+    Noisy differential expression (DE) signatures. &
+    Introduced Characteristic Direction (CD) for generating DE signatures. &
+    Fold-change or $t$-statistic methods. &
+    Higher signal-to-noise and improved drug–gene connectivity. \\[0.4em]
 
     \cite{pham2021deep} (DeepCE) &
-    Noisy or low-quality replicates in L1000 training data &
-    I\@: Model-guided data augmentation \& salvage of reliable replicates; 
-    C\@: standard training without augmentation &
-    Larger effective clean set; accuracy gains with interpretable attributions \\[0.35em]
+    Low-quality or noisy samples in training data. &
+    Used data augmentation and model-guided replicate filtering. &
+    Standard training without augmentation. &
+    Larger clean dataset and better prediction accuracy. \\[0.4em]
 
     \cite{bang2024transfer} &
-    Scarce clean labels; abundant unlabeled/noisy L1000 profiles &
-    I\@: Self/semi-supervised pretraining then fine-tuning; 
-    C\@: supervised from scratch &
-    More robust representations; better generalization under noise \\[0.35em]
+    Few clean labels but many noisy/unlabeled samples. &
+    Applied self-supervised pretraining and fine-tuning. &
+    Supervised training from scratch. &
+    More robust representations and better generalization under noise. \\[0.4em]
 
     \cite{mcdermott2019deep} &
-    Benchmarks on L1000 for drug/MoA tasks, highlighting noise effects &
-    I\@: MLPs with standard preprocessing; 
-    C\@: RF/SVM/logistic baselines &
-    DL $>$ classical but sensitive to data quality; motivates robust pipelines \\
+    Noise affects ML model performance in L1000 benchmarks. &
+    Tested deep learning (MLP) models with standard preprocessing. &
+    Compared with RF, SVM, and Logistic Regression. &
+    Deep models outperform classical ones but are more noise-sensitive. \\
     \bottomrule
   \end{tabular}
 \end{table*}
 
+
 \begin{table*}[t]
   \centering
   \caption{PICO analysis for R3: integrating external knowledge to improve performance and interpretability.}
-  \begin{tabular}{p{3.1cm} p{4.8cm} p{5.8cm} p{3.3cm}}
+  \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
     \toprule
-    \textbf{Source} & \textbf{Population / Problem (P)} & \textbf{Intervention vs.\ Comparison (I / C)} & \textbf{Outcomes (O)} \\
+    \textbf{Source} & \textbf{Problem (P)} & \textbf{Intervention}& \textbf{Comparison} & \textbf{Outcomes (O)} \\
     \midrule
 
     \cite{liu2015compound} &
     L1000 perturbational expression + drug chemical structure &
-    I\@: Expression–structure fusion for signature/compound relationships; 
-    C\@: expression-only similarity models &
+     Expression–structure fusion for signature/compound relationships& 
+     expression-only similarity models &
     Stronger MoA/target signal and retrieval vs.\ expression-only \\[0.35em]
 
     \cite{stahlschmidt2022multimodal} &
     Multimodal biomedical learning settings (expression, chemistry, networks) &
-    I\@: Early/intermediate/late fusion taxonomies (emphasis on intermediate); 
-    C\@: single-modality pipelines &
+     Early/intermediate/late fusion taxonomies (emphasis on intermediate)& 
+     single-modality pipelines &
     Guidance that intermediate fusion often outperforms simple early fusion \\[0.35em]
 
     \cite{elabd2024simple} &
     Cross-modal alignment for drug–gene/pathway effects; GO-informed designs &
-    I\@: Cross-attention fusion and knowledge-infused architectures (e.g., GO hierarchy/DrugCell-style); 
-    C\@: feature concatenation or black-box DL without priors &
+     Cross-attention fusion and knowledge-infused architectures (e.g., GO hierarchy/DrugCell-style)& 
+     feature concatenation or black-box DL without priors &
     Better modality alignment and more interpretable, pathway-level attributions \\[0.35em]
 
     \cite{mcdermott2019deep} &
     L1000 expression with biological networks (e.g., PPI) &
-    I\@: Graph CNNs leveraging network topology; 
-    C\@: MLP/classical baselines without network priors &
+     Graph CNNs leveraging network topology& 
+     MLP/classical baselines without network priors &
     Pathway/module-aligned features; may need larger datasets to outperform MLPs \\[0.35em]
 
     \cite{samal2022opportunities} &
     Need for transparency in drug-response/MoA models &
-    I\@: Intrinsically interpretable/knowledge-guided models vs.\ post-hoc XAI; 
-    C\@: opaque black-box architectures &
+     Intrinsically interpretable/knowledge-guided models vs.\ post-hoc XAI& 
+     opaque black-box architectures &
     Mechanism-grounded “glass-box” explanations preferred over post-hoc attributions \\[0.35em]
 
     \cite{lu2021drug} &
     L1000 profiles with classical ML pipeline &
-    I\@: WRFEN–XGBoost with feature selection (gene importance ranking); 
-    C\@: opaque DL without clear attributions &
+     WRFEN–XGBoost with feature selection (gene importance ranking)& 
+     opaque DL without clear attributions &
     Competitive accuracy; ranked gene lists provide direct interpretability \\[0.35em]
 
     \cite{ye2025knowledge} &
     Phenotype-based (expression) + target-based knowledge in one model &
-    I\@: Knowledge-guided graph learning bridging phenotype and targets; 
-    C\@: phenotype-only DL/ML &
+     Knowledge-guided graph learning bridging phenotype and targets&
+     phenotype-only DL/ML &
     Improved performance and more auditable, target-centered rationales \\
     \bottomrule
   \end{tabular}
@@ -374,7 +423,7 @@ The included studies were published between 2014 and 2025, reflecting the growin
 \subsection{Synthesis of Results}
 \textbf{R1: Techniques for Predicting Drug MoA and the Balance of Accuracy, Scalability, and Interpretability}
 The literature reveals a clear usage of computational methods for MoA prediction, where a continuous search for higher accuracy is conducted while battling with the challenges of scalability and interoperability.
-    \begin{itemize}
+\begin{itemize}
         \item \textbf{Early Approaches: Statistical Similarity and Classical Machine Learning:}
         \\
         Initially, the methods were based on the Connectivity Map hypothesis, using statistical methods to find drugs with similar gene expression signatures\cite{subramanian2017next,el2017integrative,liao2023open}. As data sets grew, the field adopted classical machine learning models. For instance, Random Forests were shown to be effective for predicting drug targets, particularly due to their inherent ability to handle the missing data that arises when not all drugs are tested in all cell lines\cite{mcdermott2019deep,subramanian2017next,duan2016l1000cds2}. Also methods like Support Vector Machines (SVMs) and regularised logistic regression were also used as strong baselines. While interpretable through feature importance scores, these models often struggled to capture complex, non-linear patterns in the high-dimensional gene expression space\cite{mcdermott2019deep}. For example, Lu et al. (2021) developed a hybrid WRFEN-XGBoost algorithm, demonstrating that highly optimized classical ML pipelines, which combine robust feature selection with powerful gradient boosting, remain a competitive approach for predicting drug sensitivity from L1000 profiles\cite{lu2021drug}
