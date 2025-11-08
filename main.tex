@@ -488,13 +488,13 @@ The literature uncovers a clear use of how computational methods are used for Mo
     
         \item \textbf{The Current Frontier: Attention Mechanisms and Transformers: }
         \\
-         Today’s most advanced models in biology are inspired by tools originally built for understanding human language — specifically, attention mechanisms and transformer architectures. These models are incredibly powerful because they can uncover complex patterns and relationships in different types of data at the same time\cite{wu2022deep}.
+         The most advanced models in biology that we can see today are inspired by tools that were originally built for understanding human language, specifically attention mechanisms and transformer architecture. These models have the ability to find complex patterns and relationships in various types of data at the same time, and because of this they were considered very powerful models.\cite{wu2022deep}.
     
-        For example, a model called DeepCE uses a special attention technique to figure out how the tiny building blocks of a drug interact with specific genes. This helps predict how new, untested chemicals might affect gene activity — a big step forward for drug discovery\cite{pham2021deep}.
+        For example, a model called DeepCE uses a special attention technique to figure out how the tiny building blocks of a drug interact with specific genes. When looking at untested, new chemicals and how they might affect gene activity, which is a huge step forward for drug discovery, this model helps in the prediction\cite{pham2021deep}.
     
-        Another model, MultiDCP, goes even further. It uses biological knowledge alongside transformer architecture to predict how cells will respond to drugs, even in completely new cell types. Remarkably, it can sometimes make predictions that are more reliable than actual experimental results, which are often noisy or inconsistent\cite{wu2022deep}.
-    
-        These models are pushing the limits of what’s possible in terms of accuracy and scale, but they also come with a trade-off: their inner workings are highly complex, making it difficult for researchers to explain or validate their predictions. Still, they represent an exciting leap forward in computational biology\cite{chow2022predicting}.
+        Another model, MultiDCP, goes more deep in this path. This model uses biological knowledge alongside transformer architecture to predict how cells will respond to drugs, when there are completely new cell types available. Remarkably, it can sometimes make predictions that are more reliable than actual experimental results, which are often noisy or inconsistent\cite{wu2022deep}.
+
+        When it comes to accuracy and scale, these models are pushing to the maximum limit, but with this higher accuracy and scale, there is a tradeoff as well. The workings inside the models become highly complex, which makes it difficult for the researchers to explain exactly why this prediction happened and how they can validate that prediction. Although this trade-off is there, these models represent a huge leap in computational biology.\cite{chow2022predicting}.
 \end{itemize}
 
 
@@ -508,9 +508,9 @@ The inconsistent or missing multifaceted noise that is inherent in the LINCS L10
   \item \textbf{Sources of Noise}
     \begin{itemize}
             \item \textbf{Technical and Inferential Noise:}
-            One of the main reasons for errors in the L1000 data comes from its technical process. The original method they used — a k-means algorithm for separating signal peaks — turned out to be unreliable, which led to inaccurate gene expression readings. To fix this, researchers have come up with better approaches, like Gaussian Mixture Models (GMM), Aggregate GMM (AGMM), and more recently, Bayesian models that are more stable and can deal better with uncertainty and outliers\cite{qiu2020bayesian}.
+            One of the main reasons that the L1000 dataset has a lot of errors is its technical process. The method they used to separate signal peaks was originally a k-means algorithm, and it turned out to be very unreliable, which led to inaccurate gene expression readings. To fix this issue, researchers have come up with better approaches, like Gaussian Mixture Models (GMM), Aggregate GMM (AGMM), and more recently, Bayesian models that can be considered more stable when compared to others, and these models can also deal with things like outliers and uncertainty better than other models\cite{qiu2020bayesian}.
         
-            Another big challenge is that the L1000 system only measures 978 landmark genes directly. The rest — about 11,000 genes — are generated using algorithms, not actually measured. This means that a large part of the dataset is based on predictions, which can be less reliable and adds another layer of noise\cite{subramanian2017next,mcdermott2019deep}.
+            Another big challenge is that the L1000 system only measures 978 landmark genes directly. The rest of the genes, which are about 11,000, are actually not measured but are generated using algorithms. This actually means that the rest of the dataset is, which is a large part considering the 978 and the 11,000, based on predictions, which can be less reliable, and adds another layer of noise\cite{subramanian2017next,mcdermott2019deep}.
             \item \textbf{Metadata Inconsistency and Label Noise: }
             The annotations that are associated with the data shows huge errors and inconsistencies in the LINCS L1000 dataset. This includes missing MoA labels, inconsistent drug identifiers, and heterogeneity in how information is recorded. These issues translate directly into label noise for supervised models, that can really damage the model more than the noisy features\cite{szalai2019signatures}. 
             \end{itemize}
