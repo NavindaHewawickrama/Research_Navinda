@@ -366,70 +366,125 @@ The included studies were published between 2014 and 2025, reflecting the growin
 \end{table*}
 
 
+% \begin{table*}[t]
+%   \centering
+%   \caption{PICO analysis for R3: integrating external knowledge to improve performance and interpretability.}
+%   \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
+%     \toprule
+%     \textbf{Source} & \textbf{Problem (P)} & \textbf{Intervention}& \textbf{Comparison} & \textbf{Outcomes (O)} \\
+%     \midrule
+
+%     \cite{liu2015compound} &
+%     L1000 perturbational expression + drug chemical structure &
+%      Expression–structure fusion for signature/compound relationships& 
+%      expression-only similarity models &
+%     Stronger MoA/target signal and retrieval vs.\ expression-only \\[0.35em]
+
+%     \cite{stahlschmidt2022multimodal} &
+%     Multimodal biomedical learning settings (expression, chemistry, networks) &
+%      Early/intermediate/late fusion taxonomies (emphasis on intermediate)& 
+%      single-modality pipelines &
+%     Guidance that intermediate fusion often outperforms simple early fusion \\[0.35em]
+
+%     \cite{elabd2024simple} &
+%     Cross-modal alignment for drug–gene/pathway effects; GO-informed designs &
+%      Cross-attention fusion and knowledge-infused architectures (e.g., GO hierarchy/DrugCell-style)& 
+%      feature concatenation or black-box DL without priors &
+%     Better modality alignment and more interpretable, pathway-level attributions \\[0.35em]
+
+%     \cite{mcdermott2019deep} &
+%     L1000 expression with biological networks (e.g., PPI) &
+%      Graph CNNs leveraging network topology& 
+%      MLP/classical baselines without network priors &
+%     Pathway/module-aligned features; may need larger datasets to outperform MLPs \\[0.35em]
+
+%     \cite{samal2022opportunities} &
+%     Need for transparency in drug-response/MoA models &
+%      Intrinsically interpretable/knowledge-guided models vs.\ post-hoc XAI& 
+%      opaque black-box architectures &
+%     Mechanism-grounded “glass-box” explanations preferred over post-hoc attributions \\[0.35em]
+
+%     \cite{lu2021drug} &
+%     L1000 profiles with classical ML pipeline &
+%      WRFEN–XGBoost with feature selection (gene importance ranking)& 
+%      opaque DL without clear attributions &
+%     Competitive accuracy; ranked gene lists provide direct interpretability \\[0.35em]
+
+%     \cite{ye2025knowledge} &
+%     Phenotype-based (expression) + target-based knowledge in one model &
+%      Knowledge-guided graph learning bridging phenotype and targets&
+%      phenotype-only DL/ML &
+%     Improved performance and more auditable, target-centered rationales \\
+%     \bottomrule
+%   \end{tabular}
+% \end{table*}
+
 \begin{table*}[t]
   \centering
-  \caption{PICO analysis for R3: integrating external knowledge to improve performance and interpretability.}
+  \caption{Simplified PICO analysis for R3: Integrating external knowledge to improve model performance and interpretability.}
   \begin{tabular}{p{2cm} p{3cm} p{3cm} p{3cm} p{3cm}}
     \toprule
-    \textbf{Source} & \textbf{Problem (P)} & \textbf{Intervention}& \textbf{Comparison} & \textbf{Outcomes (O)} \\
+    \textbf{Source} & \textbf{Problem} & \textbf{Intervention} & \textbf{Comparison} & \textbf{Outcome} \\
     \midrule
 
     \cite{liu2015compound} &
-    L1000 perturbational expression + drug chemical structure &
-     Expression–structure fusion for signature/compound relationships& 
-     expression-only similarity models &
-    Stronger MoA/target signal and retrieval vs.\ expression-only \\[0.35em]
+    Expression-only models fail to capture chemical similarities between drugs. &
+    Combined gene expression data with chemical structure features. &
+    Expression-only similarity models. &
+    Stronger MoA and target detection accuracy. \\[0.5em]
 
     \cite{stahlschmidt2022multimodal} &
-    Multimodal biomedical learning settings (expression, chemistry, networks) &
-     Early/intermediate/late fusion taxonomies (emphasis on intermediate)& 
-     single-modality pipelines &
-    Guidance that intermediate fusion often outperforms simple early fusion \\[0.35em]
+    Difficulty combining data from multiple sources (expression, chemistry, networks). &
+    Tested early, intermediate, and late fusion methods for multimodal learning. &
+    Single-modality pipelines. &
+    Found intermediate fusion gives the best balance of accuracy and interpretability. \\[0.5em]
 
     \cite{elabd2024simple} &
-    Cross-modal alignment for drug–gene/pathway effects; GO-informed designs &
-     Cross-attention fusion and knowledge-infused architectures (e.g., GO hierarchy/DrugCell-style)& 
-     feature concatenation or black-box DL without priors &
-    Better modality alignment and more interpretable, pathway-level attributions \\[0.35em]
+    Poor cross-modal alignment between drug and gene/pathway data. &
+    Used cross-attention fusion and GO-informed (knowledge-based) architectures. &
+    Basic feature concatenation or black-box deep learning. &
+    Better modality alignment and pathway-level interpretability. \\[0.5em]
 
     \cite{mcdermott2019deep} &
-    L1000 expression with biological networks (e.g., PPI) &
-     Graph CNNs leveraging network topology& 
-     MLP/classical baselines without network priors &
-    Pathway/module-aligned features; may need larger datasets to outperform MLPs \\[0.35em]
+    Limited biological context in L1000 expression-only models. &
+    Applied Graph Convolutional Networks (GCNs) using protein–protein interaction (PPI) networks. &
+    Standard MLP or classical baselines. &
+    Produced biologically meaningful features; needs large datasets to outperform MLPs. \\[0.5em]
 
     \cite{samal2022opportunities} &
-    Need for transparency in drug-response/MoA models &
-     Intrinsically interpretable/knowledge-guided models vs.\ post-hoc XAI& 
-     opaque black-box architectures &
-    Mechanism-grounded “glass-box” explanations preferred over post-hoc attributions \\[0.35em]
+    Lack of transparency in drug–response and MoA models. &
+    Promoted intrinsically interpretable, knowledge-guided model designs. &
+    Post-hoc explainability on black-box models. &
+    Knowledge-guided “glass-box” models preferred for clearer explanations. \\[0.5em]
 
     \cite{lu2021drug} &
-    L1000 profiles with classical ML pipeline &
-     WRFEN–XGBoost with feature selection (gene importance ranking)& 
-     opaque DL without clear attributions &
-    Competitive accuracy; ranked gene lists provide direct interpretability \\[0.35em]
+    Deep learning models lack clear interpretability. &
+    Used XGBoost with Weighted Random Forest and feature selection for gene ranking. &
+    Standard opaque deep learning models. &
+    Achieved good accuracy with directly interpretable gene importance scores. \\[0.5em]
 
     \cite{ye2025knowledge} &
-    Phenotype-based (expression) + target-based knowledge in one model &
-     Knowledge-guided graph learning bridging phenotype and targets&
-     phenotype-only DL/ML &
-    Improved performance and more auditable, target-centered rationales \\
+    Need to link phenotype-based (expression) and target-based knowledge. &
+    Developed a knowledge-guided graph model combining phenotype and target data. &
+    Phenotype-only ML/DL models. &
+    Improved performance and provided more explainable, target-centered reasoning. \\
     \bottomrule
   \end{tabular}
 \end{table*}
+
 \clearpage
 }
 \subsection{Synthesis of Results}
 \textbf{R1: Techniques for Predicting Drug MoA and the Balance of Accuracy, Scalability, and Interpretability}
-The literature reveals a clear usage of computational methods for MoA prediction, where a continuous search for higher accuracy is conducted while battling with the challenges of scalability and interoperability.
+The literature uncovers a clear use of how computational methods are used for MoA prediction, where a search for higher accuracy is conducted, all the time, continuously, while struggling with the challenges of scalability and interoperability.
 \begin{itemize}
         \item \textbf{Early Approaches: Statistical Similarity and Classical Machine Learning:}
         \\
-        Initially, the methods were based on the Connectivity Map hypothesis, using statistical methods to find drugs with similar gene expression signatures\cite{subramanian2017next,el2017integrative,liao2023open}. As data sets grew, the field adopted classical machine learning models. For instance, Random Forests were shown to be effective for predicting drug targets, particularly due to their inherent ability to handle the missing data that arises when not all drugs are tested in all cell lines\cite{mcdermott2019deep,subramanian2017next,duan2016l1000cds2}. Also methods like Support Vector Machines (SVMs) and regularised logistic regression were also used as strong baselines. While interpretable through feature importance scores, these models often struggled to capture complex, non-linear patterns in the high-dimensional gene expression space\cite{mcdermott2019deep}. For example, Lu et al. (2021) developed a hybrid WRFEN-XGBoost algorithm, demonstrating that highly optimized classical ML pipelines, which combine robust feature selection with powerful gradient boosting, remain a competitive approach for predicting drug sensitivity from L1000 profiles\cite{lu2021drug}
+        Originally, the methods were based on the theory of the Connectivity Map, where statistical methods were used to find drugs with similar gene expression signatures\cite{subramanian2017next,el2017integrative,liao2023open}. 
+         Classical machine learning models were used when the data sets became large and the traditional statistical methods could not be used. For example, Random Forests were shown to be effective for predicting drug targets, especially because of their inherent ability to handle the missing data that is shown as an issue when not all drugs are tested in all cell lines\cite{mcdermott2019deep,subramanian2017next,duan2016l1000cds2}. Also, methods like Support Vector Machines (SVMs) and regularised logistic regression were normally used as strong baseline models. Although these models were interpretable through feature importance scores, they always had a hard time capturing complex, non-linear patterns in the high-dimensional gene expression space\cite{mcdermott2019deep}.For example, Lu et al. (2021) developed a hybrid WRFEN-XGBoost algorithm, demonstrating that highly optimized classical ML pipelines, which can combine robust feature selection with powerful gradient boosting, remain a competitive approach for predicting drug sensitivity from L1000 profiles\cite{lu2021drug}
         \item \textbf{The Deep Learning Shift: From MLPs to GNNs:}
         \\
-        The introduction of deep learning marked a huge performance leap. Simple fully connected feed-forward artificial neural networks (FF-ANNs), or multilayer perceptrons (MLPs), always outperformed classical ML baselines in predicting drug properties and therapeutic categories\cite{mcdermott2019deep}. The higher the accuracy, the lower the interpretability in these methods, as the models were treated largely as black boxes\cite{samal2022opportunities}. A huge leap from previous stages was the use of graph convolutional neural networks (GCNNs), which incorporate biological knowledge, such as a protein-protein interaction (PPI) network, directly into the model's structure. This constrains the model to learn features corresponding to biological pathways, offering a path back to interpretability.  Studies found that GCNNs can be highly performant but often require very large datasets to be effective, underperforming FF-ANNs on smaller corpora\cite{mcdermott2019deep}.
+        When deep learning was introduced, a huge leap was made in performance. Simple fully connected feed-forward artificial neural networks (FF-ANNs), or multilayer perceptrons (MLPs), outperformed classical ML baselines in predicting drug properties and therapeutic categories, most of the time. These models were considered as huge black boxes because when the model accuracy became higher, the model interpretability became lower\cite{samal2022opportunities}. Another huge difference from the previous methods was the use of graph convolutional neural networks (GCNNs), which gives the biological knowledge, like a protein-protein interaction (PPI) network, directly into the model's structure. Because of this, the models got a new constraint of learning features corresponding to biological pathways, offering a path back to interpretability.  Studies found that GCNNs can be highly performant, but they usually require very large datasets to be effective, underperforming FF-ANNs on smaller corpora\cite{mcdermott2019deep}.
     
         \item \textbf{The Current Frontier: Attention Mechanisms and Transformers: }
         \\
