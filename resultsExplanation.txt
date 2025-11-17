@@ -1,0 +1,122 @@
+Successfull build Random Forest baseline model for Mechanism of Action (MoA) prediction from LINCS L1000 + Drug Repurposing Hub data, which matches exactly what many papers do as a baseline in my SLR
+
+Step-by-Step Explanation of What Happened
+
+1. Data Loading
+
+used the LINCS L1000 Phase II (GSE92742) dataset, which contains 473,647 gene expression signatures across ~12,000 genes.
+
+loaded a subset of 3,000 signatures randomly to make computation feasible on your machine.
+
+Each signature (sig_id) corresponds to a compound perturbation in a specific cell line and condition.
+
+2. Metadata Integration
+
+loaded: sig_info.txt: Signature-level metadata (perturbation ID, cell, dose, etc.)
+pert_info.txt: Compound-level metadata (pert_id, SMILES, PubChem ID)
+
+repurposing_drugs_20200324.txt: Drug Repurposing Hub data (mechanism of action, clinical phase, target proteins)
+
+Then you merged all three to link each expression profile to its Mechanism of Action (MoA).
+
+Result:
+✅ You had 85,001 entries that contained MoA annotations.
+✅ Of your 3,000 subset, 527 expression signatures had valid MoA matches.
+
+3. Data Cleaning
+
+The code removed rare MoA labels that appeared only once (these are too few to train a classifier).
+
+After filtering, you had 81 MoA classes (labels) across 315 training and 81 testing samples.
+
+4. Model Training
+
+You trained a Random Forest classifier (100 trees) on the expression data.
+
+Each feature represents a gene expression value; the target is the MoA label.
+
+Random Forests are good baseline models for biological classification because:
+
+They handle nonlinearity.
+
+They’re robust to noise.
+
+They give quick baseline performance for multi-class problems.
+
+5.Model Evaluation
+
+ | Metric              | Value               |
+| ------------------- | ------------------- |
+| ✅ Accuracy          | **0.2593 (25.93%)** |
+| ✅ Weighted F1-score | **0.1197 (11.97%)** |
+
+
+nterpretation:
+
+The model correctly predicted the MoA class in ~26% of test samples.
+
+The low F1-score shows class imbalance — it predicts common classes (like “control vehicle” and “HDAC inhibitor”) better, but struggles with rare classes.
+
+Many MoA classes appear with very few examples → the model cannot generalize them properly.
+
+
+
+6. Classification Report Insights
+
+From the output:
+
+Only HDAC inhibitors (f1=0.53) and control vehicle (f1=0.38) were predicted reasonably well.
+
+All other MoA types had precision/recall = 0 (not enough samples or too similar profiles).
+
+The warning "The number of unique classes is greater than 50% of the number of samples" means this is highly multi-class with sparse labels.
+
+
+
+
+Conclusion
+
+Title: Random Forest Baseline for MoA Prediction
+
+Objective:
+To develop a baseline machine learning model to predict mechanisms of action (MoAs) of compounds using LINCS L1000 gene expression signatures and Drug Repurposing Hub annotations.
+
+Approach:
+
+Randomly selected 3,000 expression signatures from GSE92742 (LINCS L1000 Phase II).
+
+Merged with corresponding drug metadata and MoA labels from the Drug Repurposing Hub (2020 version).
+
+Removed MoA classes with fewer than 2 samples.
+
+Trained a Random Forest classifier (n=100) on standardized expression features.
+
+Results
+| Metric                     | Value     |
+| -------------------------- | --------- |
+| Accuracy                   | **25.9%** |
+| Weighted F1-score          | **11.9%** |
+| Number of MoA classes      | 81        |
+| Number of training samples | 315       |
+| Number of test samples     | 81        |
+
+Observations:
+
+The model achieved moderate accuracy on limited data, showing that gene expression signatures do contain some MoA-related information.
+
+However, performance is constrained by:
+
+High class imbalance (most MoAs have few examples).
+
+Limited subset size (3,000 out of ~470,000).
+
+Biological and experimental variability in signatures.
+
+Despite these limitations, this serves as a valid baseline model for comparison with future, more advanced methods.
+
+
+Conclusion:
+
+The Random Forest baseline achieved an accuracy of 25.9% and an F1-score of 11.9% when predicting mechanisms of action from LINCS L1000 expression data.
+This demonstrates that traditional ensemble models can partially capture drug response patterns but are limited by class imbalance and data sparsity.
+These baseline results will serve as a benchmark for subsequent experiments using more complex models such as gradient boosting, deep neural networks, or multi-task learning architectures.

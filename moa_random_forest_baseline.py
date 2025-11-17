@@ -152,6 +152,14 @@ pred_df = pd.DataFrame({
 pred_df.to_csv(os.path.join(RESULTS_DIR, "random_forest_predictions.csv"), index=False)
 dump(rf, os.path.join(RESULTS_DIR, "random_forest_model.joblib"))
 
+# ---------------- SAVE TEST SET FOR EVALUATION ---------------- #
+np.save(os.path.join(RESULTS_DIR, "x_test.npy"), X_test)
+np.save(os.path.join(RESULTS_DIR, "y_test.npy"), y_test)
+
+print("\n📁 Saved test data for evaluation:")
+print("   x_test.npy")
+print("   y_test.npy")
+
 print("\n✅ Baseline results and model saved to:")
 print(f"   {os.path.join(RESULTS_DIR, 'random_forest_predictions.csv')}")
 print(f"   {os.path.join(RESULTS_DIR, 'random_forest_model.joblib')}")
