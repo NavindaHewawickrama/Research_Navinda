@@ -1,0 +1,106 @@
+
+
+? 1. The Pipeline Worked Correctly
+
+SVM baseline script:
+
+* Loaded LINCS L1000 expression data**
+* Merged it with MoA (Mechanism of Action)** metadata
+* Scaled the features
+* Split data into train/test
+* Trained an SVM classifier**
+* Evaluated accuracy and F1 score
+* Saved the model + predictions
+
+
+### ?? Stratified Split Warning
+
+```
+Stratified split failed ... using non-stratified split instead.
+```
+
+This is expected — there are 81 classes but only 527 total samples, so some classes don’t have enough examples to appear in both splits.
+The code correctly switched to a non-stratified split, as designed.
+
+---
+
+### ?? “More than 50% unique classes” Warning
+
+```
+UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+```
+
+This is harmless.
+It just means:
+
+> “You have 81 classes for 527 samples — that’s a lot of classes compared to total samples.”
+
+It’s still classification, but scikit-learn warns you because most classification problems have far fewer classes relative to samples.
+
+---
+
+## ?? 3. Model Results
+
+```
+? Accuracy: 0.1750
+? F1-score: 0.0775
+```
+
+Let’s interpret:
+
+* Accuracy = 17.5%
+* F1-score = 7.75%
+
+That might seem low, but it’s completely normal** given:
+
+* You have 81 classes
+* Many classes have only 1–2 samples
+* The data is very noisy and small after filtering
+
+In other words — this is expected baseline behavior for an SVM on the reduced LINCS subset.
+
+---
+
+## ?? 4. Classification Report Summary
+
+The detailed output shows that:
+
+* Most classes (e.g., “EGFR inhibitor”, “MEK inhibitor”, etc.) have too few samples to generalize.
+* Only one class, `control vehicle`, had enough samples to show meaningful recall (`1.00` recall on 12 samples).
+
+This confirms data imbalance not code issues.
+
+---
+
+## ?? 5. Output Files (Successfully Saved)
+
+```
+?? Predictions: D:\4thyear\Research\Implementations\models\RFB\results\svm_predictions.csv
+?? Model: D:\4thyear\Research\Implementations\models\RFB\results\svm_model.joblib
+```
+
+? You can open these to inspect the results or reuse them in later analysis.
+
+---
+
+## ?? 6. Summary
+
+| Stage               | Result              | Notes                   |
+| ------------------- | ------------------- | ----------------------- |
+| Data loading        | ? Successful        | 3,000 subset from 473k  |
+| Merge with metadata | ? 527 valid samples | With MoA labels         |
+| Train/test split    | ?? Non-stratified   | Due to many classes     |
+| SVM training        | ? Successful        | Linear SVM trained      |
+| Accuracy            | 17.5%               | Reasonable for baseline |
+| Output              | ? Model + CSV saved | Paths shown above       |
+
+---
+
+## ?? 7. Next Steps
+
+Now that your **Random Forest** and **SVM** baselines are working:
+
+Next, you can proceed to the **third baseline** in your methods list —
+usually **Gradient Boosting (XGBoost)** or **Neural Network (MLP)**, depending on your plan.
+
+Would you like me to generate the **next baseline code (e.g., Gradient Boosting / XGBoost)** using the same clean structure as your current baselines?

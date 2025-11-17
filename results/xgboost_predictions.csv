@@ -1,0 +1,82 @@
+true_label,predicted_label
+CDK inhibitor,CDK inhibitor
+insulin sensitizer|PPAR receptor agonist,control vehicle
+control vehicle,control vehicle
+control vehicle,control vehicle
+histamine receptor antagonist,insulin sensitizer|PPAR receptor agonist
+vesicular monoamine transporter inhibitor,control vehicle
+local anesthetic,topoisomerase inhibitor
+control vehicle,control vehicle
+EGFR inhibitor,control vehicle
+phosphodiesterase inhibitor,control vehicle
+cyclooxygenase inhibitor,PPAR receptor agonist
+ribonucleotide reductase inhibitor,control vehicle
+tyrosine kinase inhibitor,dopamine receptor antagonist
+inositol monophosphatase inhibitor,MEK inhibitor
+NFkB pathway inhibitor,control vehicle
+retinoid receptor agonist,control vehicle
+control vehicle,control vehicle
+protein synthesis inhibitor,protein synthesis inhibitor
+PKC inhibitor,control vehicle
+serotonin receptor agonist,control vehicle
+dopamine receptor antagonist|serotonin receptor antagonist,serotonin receptor antagonist
+control vehicle,acetylcholine receptor antagonist
+control vehicle,control vehicle
+control vehicle,control vehicle
+topoisomerase inhibitor,topoisomerase inhibitor
+PI3K inhibitor,dopamine receptor agonist
+estrogen receptor agonist|estrogenic hormone,control vehicle
+acetylcholine receptor antagonist,control vehicle
+PARP inhibitor,control vehicle
+HDAC inhibitor,HDAC inhibitor
+dopamine receptor antagonist,control vehicle
+tubulin polymerization inhibitor,control vehicle
+calcium channel activator,control vehicle
+control vehicle,control vehicle
+sodium channel blocker,control vehicle
+dopamine receptor agonist,control vehicle
+control vehicle,control vehicle
+bacterial 30S ribosomal subunit inhibitor,control vehicle
+HDAC inhibitor,HDAC inhibitor
+ATPase inhibitor,HDAC inhibitor
+RAF inhibitor,control vehicle
+CDK inhibitor,topoisomerase inhibitor
+MEK inhibitor,control vehicle
+DNA synthesis inhibitor,control vehicle
+control vehicle,control vehicle
+control vehicle,control vehicle
+cyclooxygenase inhibitor,control vehicle
+androgen receptor antagonist,CDK inhibitor
+control vehicle,control vehicle
+glucocorticoid receptor agonist,control vehicle
+HDAC inhibitor,control vehicle
+PARP inhibitor,histamine receptor antagonist
+calcium channel blocker,control vehicle
+HDAC inhibitor,HDAC inhibitor
+HSP inhibitor,HSP inhibitor
+serotonin receptor antagonist,control vehicle
+adrenergic receptor agonist,control vehicle
+mTOR inhibitor,control vehicle
+control vehicle,dopamine receptor antagonist
+control vehicle,control vehicle
+histamine receptor agonist,control vehicle
+mitochondrial DNA polymerase inhibitor|phosphatase inhibitor,control vehicle
+control vehicle,control vehicle
+estrogen receptor antagonist,control vehicle
+estrogen receptor agonist,control vehicle
+mTOR inhibitor|PI3K inhibitor,PI3K inhibitor
+control vehicle,estrogen receptor agonist
+GABA receptor antagonist,control vehicle
+adrenergic receptor antagonist,control vehicle
+PPAR receptor agonist,phosphodiesterase inhibitor
+selective serotonin reuptake inhibitor (SSRI),control vehicle
+HDAC inhibitor,control vehicle
+estrogen receptor agonist,control vehicle
+HSP inhibitor,HSP inhibitor
+BCL inhibitor,HSP inhibitor
+dopamine receptor antagonist,control vehicle
+11-beta hydroxysteroid dehydrogenase inhibitor,adrenergic receptor agonist
+bacterial DNA gyrase inhibitor,control vehicle
+HMGCR inhibitor,PI3K inhibitor
+HDAC inhibitor,HDAC inhibitor
+control vehicle,control vehicle
