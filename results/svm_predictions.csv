@@ -1,0 +1,81 @@
+true_label,predicted_label
+androgen receptor antagonist,control vehicle
+HDAC inhibitor,control vehicle
+glycogen synthase kinase inhibitor,control vehicle
+dopamine receptor antagonist,control vehicle
+HDAC inhibitor,control vehicle
+HDAC inhibitor,HDAC inhibitor
+TRPV agonist,control vehicle
+control vehicle,control vehicle
+GABA receptor antagonist,control vehicle
+caspase activator,control vehicle
+EGFR inhibitor,control vehicle
+histamine receptor antagonist,control vehicle
+control vehicle,control vehicle
+retinoid receptor agonist,control vehicle
+control vehicle,control vehicle
+control vehicle,control vehicle
+calcium channel blocker,control vehicle
+HDAC inhibitor,control vehicle
+serotonin receptor antagonist,control vehicle
+control vehicle,control vehicle
+cyclooxygenase inhibitor,control vehicle
+estrogen receptor antagonist,control vehicle
+control vehicle,control vehicle
+cyclooxygenase inhibitor,control vehicle
+acetylcholinesterase inhibitor,control vehicle
+dopamine receptor antagonist,control vehicle
+calpain inhibitor,control vehicle
+HDAC inhibitor,control vehicle
+PARP inhibitor,control vehicle
+BCL inhibitor,control vehicle
+monoamine oxidase inhibitor,control vehicle
+MEK inhibitor,control vehicle
+estrogen receptor agonist,control vehicle
+control vehicle,control vehicle
+topoisomerase inhibitor,control vehicle
+retinoid receptor agonist,control vehicle
+dopamine receptor antagonist,control vehicle
+mTOR inhibitor|PI3K inhibitor,control vehicle
+HSP inhibitor,control vehicle
+TRPV agonist,control vehicle
+IKK inhibitor|NFkB pathway inhibitor,control vehicle
+control vehicle,control vehicle
+histamine receptor antagonist,control vehicle
+HDAC inhibitor,HDAC inhibitor
+histamine receptor antagonist,control vehicle
+serotonin receptor agonist,control vehicle
+topoisomerase inhibitor,control vehicle
+control vehicle,control vehicle
+calcium channel blocker,control vehicle
+adrenergic receptor antagonist,control vehicle
+dopamine receptor agonist,control vehicle
+sigma receptor antagonist,control vehicle
+calcium channel blocker,control vehicle
+control vehicle,control vehicle
+phosphodiesterase inhibitor,control vehicle
+bacterial DNA gyrase inhibitor,control vehicle
+control vehicle,control vehicle
+protein synthesis inhibitor,control vehicle
+adrenergic receptor antagonist,control vehicle
+tubulin polymerization inhibitor,control vehicle
+NFkB pathway inhibitor,control vehicle
+RNA synthesis inhibitor|topoisomerase inhibitor,control vehicle
+TGF beta receptor inhibitor,control vehicle
+acetylcholine receptor antagonist,control vehicle
+dopamine receptor agonist,control vehicle
+CDK inhibitor,control vehicle
+PARP inhibitor,control vehicle
+HSP inhibitor,control vehicle
+ATPase inhibitor,control vehicle
+histamine receptor agonist,control vehicle
+estrogen receptor antagonist,control vehicle
+PARP inhibitor,control vehicle
+mTOR inhibitor,control vehicle
+cyclooxygenase inhibitor,control vehicle
+control vehicle,control vehicle
+HMGCR inhibitor,control vehicle
+inositol monophosphatase inhibitor,control vehicle
+cyclooxygenase inhibitor,control vehicle
+TGF beta receptor inhibitor,control vehicle
+tubulin polymerization inhibitor,control vehicle
